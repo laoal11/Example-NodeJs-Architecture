@@ -49,6 +49,6 @@ authorizedRouter.use('/', authorizedHandler);
 
 module.exports = (app) => {
     app.use('/api/', apiRouter),
-        app.use('/admin/', authService.authenticate, authorizedRouter),
+        app.use('/authorized/', authService.authenticate, authorizedRouter),
         app.use('/', wwwRouter)
 }
