@@ -5,7 +5,6 @@ async function authenticate(req, res, next) {
     var cookie = req.cookies['auth'];
     console.log(req);
     if (cookie == undefined) {
-        console.log(req.cookies)
         logger.debug("Someone unauthorized tried to reach an authorized resource")
         return res.sendStatus(403);
     }
