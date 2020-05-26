@@ -3,7 +3,6 @@ const logger = require('../utils/logger')
 // dummy function in case one ever wants to implement accounts
 async function authenticate(req, res, next) {
     var cookie = req.cookies['auth'];
-    console.log(req);
     if (cookie == undefined) {
         logger.debug("Someone unauthorized tried to reach an authorized resource")
         return res.sendStatus(403);
