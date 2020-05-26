@@ -3,5 +3,5 @@ const dummyFunction = () => {
 }
 
 module.exports = {
-    fruitFromJson: dummyFunction
+    dummyFunction: dummyFunction
 }
