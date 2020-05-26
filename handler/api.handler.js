@@ -10,7 +10,6 @@ module.exports = api;
 
 api.get('/', function (req, res) {
     logger.info("Received request");
-    logger.debug("Request received!!");
     return res.sendStatus(200);
 })
 
@@ -24,7 +23,7 @@ api.get('/error', function (req, res) {
     logger.info("Received error request");
     let err;
     if (!err) {
-        throw new ErrorHandler(500, "This is a default message")
+        throw new ErrorHandler(500, "This is a default error message")
     }
 })
 
