@@ -10,7 +10,7 @@ const cookieParser = require('cookie-parser');
 const configureRoutes = require('./server.routes.js')
 
 const { handleError } = require('./utils/error')
-const logger = require('./logger')
+const logger = require('./utils/logger')
 
 app.use(cookieParser());
 app.use(compression());

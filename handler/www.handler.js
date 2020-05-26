@@ -2,10 +2,11 @@ const Router = require('express-promise-router')
 
 const path = require('path');
 
+const { ErrorHandler } = require('../utils/error')
+
 const app = new Router();
 
 const express = require('express');
-
 
 //const authService = require('../auth/index')
 
@@ -22,6 +23,5 @@ app.use(express.static(path.resolve('www/public'), {
 //app.use(authService.authenticate, express.static(path.resolve('www/private'),{index:false, extensions:['html']}));
 
 app.use('/*', function (req, res) {
-    console.log("User requested resource that does not exist");
-    return res.sendStatus(404);
+    throw new ErrorHandler(404, "Website " + req.originalUrl + " not found")
 })
